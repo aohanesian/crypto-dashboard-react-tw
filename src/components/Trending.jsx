@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 function Trending(props) {
     const [trending, setTrending] = useState([]);
-    const url = `http://api.coingecko.com/api/v3/search/trending`;
+    const url = `https://api.coingecko.com/api/v3/search/trending`;
 
     useEffect(() => {
         axios.get(url).then((response) => {
