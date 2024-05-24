@@ -13,6 +13,7 @@ function CoinPage(props) {
     useEffect(() => {
         axios.get(url).then((response) => {
             setCoin(response.data);
+            console.log(response.data)
         })
             .catch((error) => {
                 console.error("Error fetching data:", error);
@@ -79,8 +80,8 @@ function CoinPage(props) {
                             {coin.hashing_algorithm ? <p>{coin.hashing_algorithm}</p> : null}
                         </div>
                         <div>
-                            <p className={`text-gray-500 text-sm`}>Trust Score</p>
-                            {coin.tickers ? <p>{coin.liquidity_score.toFixed(2)}</p> : null}
+                            <p className={`text-gray-500 text-sm`}>Market Cap Rank</p>
+                            {coin.tickers ? <p>{coin.market_cap_rank}</p> : null}
                         </div>
                     </div>
                     <div className={`flex justify-between py-4`}>
